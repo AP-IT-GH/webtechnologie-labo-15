@@ -1,6 +1,6 @@
 # Labo 15
 
-Zorg dat je de volgende folder structuur volgt:
+Zorg dat je de volgende folderstructuur volgt:
 
 ```
 webtechnologie/
@@ -13,6 +13,9 @@ webtechnologie/
 │  │  ├─ css/
 │  │  │   ├─ reset.css
 │  │  │   └─ style.css
+│  │  ├─ data/
+│  │  │   ├─ datafile-1.json
+│  │  │   └─ datafile-2.json
 │  │  └─ js/
 │  │     └─ script.js
 │  ├─ oefening-02/
@@ -25,401 +28,126 @@ webtechnologie/
 - Zet je Javascript file steeds in strict mode (`"use strict"`);
 - Volg de [Coding Guidelines](https://apwt.gitbook.io/webtechnologie/coding-guidelines)
 
-### oefening 1: som
+## oefening 1: recept
 
 ### leerdoelen
 
-* werken met arrays
-* lengte van arrays opvragen
-* arrays doorlopen met een for-loop
-
-### functionele analyse
-
-Je programma geeft de som van een rij getallen terug.
-
-### technische analyse
-
-Je begint met een `array` te maken van de getallen 1, 2, 3, 4, 5 en 6. Je maakt een variabele `som` en kent er de waarde 0 aan toe.
-
-Vervolgens maak je een lus die van 0 tot het aantal getallen in de array itereert. Elke iteratie tel je het huidige getal op bij een variabele som.
-
-De som print je af op in de console.
-
-### voorbeeldinteractie
-![voorbeeldinteractie som](./voorbeeldinteractie-som.avif)
-
-### oefening 2: namen
-
-### leerdoelen
-
-* werken met arrays
-* lengte van arrays opvragen
-* arrays doorlopen met een for-loop
-
-### functionele analyse
-
-Je programma genereert op basis van 2 arrays een lijst van voor- en achternamen.
-
-### technische analyse
-
-Maak 2 string-arrays aan. De eerste geef je 5 voornamen, de andere 5 achternamen.
-
-Controleer dat de lengte van beide arrays gelijk is. Zo niet print je een foutboodschap.
-
-Gebruik een for-loop om door de lijst van namen te loopen.
-
-Toon vervolgens een lijst uit met voor- en achternamen op de scherm van de browser.
-
-### voorbeeldinteractie
-
-![voorbeeldinteractie namen](./voorbeeldinteractie-namen.avif)
-
-### oefening 3: vrienden
-
-### leerdoelen
-
-* werken met gebruikersinteractie
-* werken met for-loop
-* toevoegen van elementen in een array
-
-### functionele analyse
-
-Je programma vraagt hoeveel vrienden er moeten worden ingevoerd. Op basis daarvan kan je daarna je vrienden toevoegen aan een lijst. Nadien wordt de lijst uitgeprint (laatste ingave eerst).
-
-### technische analyse
-
-Vraag de gebruiker hoeveel namen er moeten worden ingegeven. Maak hiervoor gebruik van input-veld.
-
-Vraag dan X aantal keer de naam van de vriend dat je wenst toe te voegen. **Hint**: je kan voor deze oefening `prompt()` gebruiken om de gebruiker te vragen achter de namen.
-
-Voeg de vrienden toe aan een array van vrienden.
-
-Toon vervolgens de lijst met vrienden in een lijst.
-
-### voorbeeldinteractie
-
-![voorbeeldinteractie](./voorbeeldinteractie-vriendenlijst.gif)
-
-### oefening 4: punten
-
-### leerdoelen
-
-* werken met for-of-loop
-* werken met arrays
-* wiskundige bewerkingen
-
-### functionele analyse
-
-Je programma verwerkt een puntenlijst aan resultaten en print het gemiddelde, het percentage en het aantal gebuisde vakken uit.
-
-### technische analyse
-
-Gebruik voor deze oefening volgende array:
-
-```
-const grades = [16,12,16,7,17,14,9,8,18,12];
-```
-
-Gebruik een for-of-loop om door de grades te loopen.
-
-Bereken het gemiddelde, het percentage en het aantal gebuisde vakken.
-
-Toon deze waardes op het scherm in een lijst.
-
-### voorbeeldinteractie
-
-![voorbeeldinteractie](./voorbeeldinteractie-punten.gif)
-
-### oefening 5: punten met vragen
-
-### leerdoelen
-
-* gebruiken van do while loop
-* werken met arrays
-* input vragen
-
-### functionele analyse
-
-Je breidt de punten oefening uit zodat de gebruiker zelf de punten kan ingeven.
-
-### technische analyse
-
-Schrijf eerst een do while loop om de punten te vragen. Op de moment dat de gebruiker geen getal meer ingeeft dan worden dezelfde waarden getoond aan de gebruiker als in de vorige oefening.
-
-### voorbeeldinteractie
-
-![voorbeeldinteractie](./voorbeeldinteractie-punten-met-vragen.gif)
-
-### oefening 6: pokémon team
-
-### leerdoelen
-
-* gebruiken van loops
-* werken met arrays
-* zoeken in arrays
-
-### functionele analyse
-
-Je programma maakt het mogelijk om de gebruiker een team van pokémon samen te stellen.
-
-### technische analyse
-
-Gegeven is de volgende array van 20 pokemon:
-
-```
-let pokemon = [
-    "Bulbasaur",
-    "Ivysaur",
-    "Venusaur",
-    "Charmander",
-    "Charmeleon",
-    "Charizard",
-    "Squirtle",
-    "Wartortle",
-    "Blastoise",
-    "Caterpie",
-    "Metapod",
-    "Butterfree",
-    "Weedle",
-    "Kakuna",
-    "Beedrill",
-    "Pidgey",
-    "Pidgeotto",
-    "Pidgeot",
-    "Rattata",
-    "Raticate",
-    "Spearow",
-];
-```
-
-* Maak een array `team`. Deze array bevat de pokémon van de gebruiker van het programma.
-* Gebruik een lus om de pokémon in een genummerde lijst te tonen aan de gebruiker.
-
-```
-1. Bulbasaur
-2. Ivysaur
-3. Venusaur
-4. Charmander
-5. Charmeleon
-...
-```
-
-* Vraag daarna aan de gebruiker welke pokémon er moet toegevoegd worden aan het team. Dit doe je aan de hand van de index van de pokemon. Dit doe je tot de gebruiker STOP ingeeft. Je kan dit doen aan de hand van een `do while` loop.
-
-```
-Welke pokemon wil je in je team? [1-21]: 4
-Welke pokemon wil je in je team? [1-21]: 3
-Welke pokemon wil je in je team? [1-21]: STOP
-```
-
-* Als de gebruiker een pokémon ingeeft die al in het team zet dan krijgt hij hiervan een melding en wordt de pokémon niet toegevoegd:
-
-```
-Welke pokemon wil je in je team? [1-20]: 4
-Welke pokemon wil je in je team? [1-20]: 3
-Welke pokemon wil je in je team? [1-20]: 4
-Deze pokemon zit al in je team
-Welke pokemon wil je in je team? [1-20]: 2
-Welke pokemon wil je in je team? [1-20]: STOP
-```
-
-* Als de pokémon niet bekend is (dus het ingegeven nummer groter is dan de lengte van de array) wordt er ook een melding gegeven:
-
-```
-Welke pokemon wil je in je team? [1-21]: 22
-Deze pokemon ken ik niet
-Welke pokemon wil je in je team? [1-21]: 4
-```
-
-* Als je STOP hebt ingegeven dan wordt het team van de gebruiker op het scherm getoond:
-
-```
-Welke pokemon wil je in je team? [0-20]: 1
-Welke pokemon wil je in je team? [0-20]: 2
-Welke pokemon wil je in je team? [0-20]: 3
-Welke pokemon wil je in je team? [0-20]: 4
-Welke pokemon wil je in je team? [0-20]: 5
-Welke pokemon wil je in je team? [0-20]: 6
-Welke pokemon wil je in je team? [0-20]: STOP
-Jouw team van pokemon is: 
-1. Ivysaur
-2. Venusaur
-3. Charmander
-4. Charmeleon
-5. Charizard
-6. Squirtle
-```
-
-### voorbeeldinteractie
-
-![voorbeeldinteractie](./voorbeeldinteractie-pokemonteam.gif)
-
-### oefening 7: tweedimensionale som
-
-### leerdoelen
-
-* twee dimensionale arrays
-
-### functionele analyse
-
-We gaan de som berekenen van alle waarden van een tabel (of tweedimensionale array).
-
-### technische analyse
-
-We beginnen met de volgende twee dimensionele array:
-
-```
-let spreadsheet = [
-    [100, 104, 105],
-    [144, 110, 109],
-    [105, 107, 111]
-];
-```
-
-* Maak een variabele `sumRow1` en ken de som van de drie elementen van de eerste rij hieraan toe.
-* Print de som uit op het scherm.
-* Doe hetzelfde voor de andere rijen.
-
-### voorbeeldinteractie
-
-![voorbeeldinteractie](./voorbeeldinteractie-2dsom.png)
-
-# Oefeningen functies
-
-## oefening 8: opwarmers
-Schrijf de volgende functies om aan te tonen dat je alle concepten onder de knie hebt:
-
-* Schrijf een functie zonder argumenten die een getal teruggeeft.
-* Schrijf een functie zonder argumenten die een string teruggeeft.
-* Schrijf een functie zonder argumenten die een boolean teruggeeft.
-* Schrijf een functie zonder argumenten die een string afprint in de console.
-* Schrijf een functie met twee argumenten (twee getallen) die een getal op het scherm afprint. Het getal dat wordt getoond moet iets doen met deze twee getallen.
-
-## oefening 9: text-box-functie
-
-### leerdoelen
-
-* input lezen
-* schrijven van eigen functies
-
-### functionele analyse
-
-Je programma toont een stuk tekst in je console in een tekstvak
-
-### technische analyse
-
-Je kan de code om een box te tekenen hergebruiken uit een eerdere oefening. Je moet ze wel nog omzetten naar een functie.
-
-Je maakt een functie `printTextBox` met een string als parameter. De functie toont de tekst in het tekstvak.
-
-Je roept de functie een aantal keer aan met verschillende parameters.
-
-### voorbeeldinteractie
-
-![voorbeeldinteractie](./voorbeeldinteractie-textbox-functie.png)
-
-## oefening 10: name-from-email-functie
-
-### leerdoelen
-
-* input lezen
+* objecten aanmaken
+* dot notatie gebruiken
 * lussen
-* schrijven van eigen functies
 
 ### functionele analyse
 
-Het programma toont het gedeelte van de e-mailadres dat de naam voorstelt.
+Het programma berekent de totaalprijs van een gegeven recept.
 
 ### technische analyse
 
-Je kan de code van hergebruiken uit een eerdere oefening. Je moet ze opnieuw nog omzetten naar een functie.
 
-Je maakt een functie `nameFromEmail` met 1 parameter die een email adres bevat. Deze functie geeft de voor en de achternaam terug in hoofdletters.
+Je maakt een object. Dit bevat een
 
-Je vraagt de gebruiker op een interactieve manier achter zijn email adres.
+* naam
+* beschrijving
+* personen
+* ingredienten
 
-Je blijft een email adres vragen totdat deze een lege string ingeeft.
+de ingredienten bevatten een:
+
+* naam
+* hoeveelheid (bv "1 stuk", "1 kg")
+* prijs
+
+Maak het object aan met zelfgekozen values en ken deze toe aan aan variabele `spaghetti`.
+
+Print de naam van dit gerecht af (via de dot-notatie) gevolgd door de totaalprijs van alle ingredienten.
 
 ### voorbeeldinteractie
 
-![voorbeeldinteractie](./voorbeeldinteractie-name-from-email-functie.gif)
+![voorbeeldinteractie](./voorbeeldinteractie-recept.png)
 
-## oefening 11: maaltafel-functie
-
-### leerdoelen
-
-* gebruiken van lussen
-* schrijven van eigen functies
-
-### functionele analyse
-
-Je programma print de maaltafels van 1 tot en met 10 af (met 10 iteraties)
-
-### technische analyse
-
-Je kan code van een eerdere oefening herbruiken.
-
-Je maakt een functie `printMaaltafel` met 2 parameters: getal en iteraties. Deze functie print de maaltafel af van het gegeven getal en iteraties. De functie geeft niets terug en print enkel deze maaltafel af.
-
-Zorg ervoor dat je voor de getallen 1 tot en met 10 de maaltafel afprint.
-
-Je kan de getallen mooi oplijnen aan de hand van het  karakter. Zorg voor een 3de optionele parameter `separator` waarmee je de separator mee kan geven. Zorg voor een default  waarde voor deze separator als deze niet opgegeven wordt
-
-### voorbeeldinteractie
-
-![voorbeeldinteractie](./voorbeeldinteractie-maaltafel-functie.png)
-
-## oefening 12: schrikkeljaar-functie
+## oefening 2: persoon
 
 ### leerdoelen
 
-* gebruiken van lussen
-* schrijven van eigen functies
+* objecten aanmaken
+* dot-notatie gebruiken
+* gebruik/uitlezen van JSON
+* schrijven van functies
 
 ### functionele analyse
 
-Je programma toont een overzicht van alle schrikkeljaren tussen 1950 en het huidige jaartal.
+Lees een json-bestand in en print daar enkele waardes van op het scherm
 
 ### technische analyse
 
-Je kan code herbruiken uit een eerdere oefening.
+Maak een **person.json** bestand aan met volgende data:
 
-Je maakt een functie `isLeapYear` die 1 parameter aanvaardt met het jaartal en de functie geeft true terug als het een schrikkeljaar is en false als het geen schrikkeljaar is. Reminder: een schrikkeljaar is elk veelvoud van 400, alsook elk ander getal dat een veelvoud is van 4 maar niet van 100.
-
-Je gebruikt een lus om voor de jaartallen tussen 1950 en dit jaar te berekenen of het een schrikkeljaar is of niet. Je print het jaar af als het een schrikkeljaar is.
-
-Je kan het huidige jaar verkrijgen met de volgende code
-
-```js
-new Date().getFullYear();
+```
+{
+  "firstname": "Jurgen",
+  "lastname": "Vervoort",
+  "age": 27,
+  "city": "Heist-op-den-Berg",
+  "street": "Bergstraat",
+  "number": "17c",
+  "postal": 2220,
+  "hobbies": ["voetbal", "tafeltennis", "vissen"]
+}
 ```
 
+1. Lees het _person.json_ bestand in
+2. Maak een eerste functie _printFullName()_ dat het ingelezen object als parameter ontvangt en de volledige naam van de persoon uitprint.
+3. Maak een tweede functie _printHobbies()_ dat het ingelezen object als parameter ontvangt en de hobby's van de persoon oplijst.
+
 ### voorbeeldinteractie
 
-![voorbeeldinteractie](./voorbeeldinteractie-schrikkeljaar-functie.png)
+![voorbeeldinteractie](./voorbeeldinteractie-person.png)
 
-## oefening 13: array-sum
+## oefening 3: todo's
 
 ### leerdoelen
 
-* gebruiken van lussen
-* schrijven van eigen functies
-* arrays
+* objecten aanmaken
+* dot-notatie gebruiken
+* gebruik/uitlezen van JSON
+* schrijven van functies
+* werken met arrays van objecten
 
 ### functionele analyse
 
-Je programma berekent de som van een array
+Lees todos.json (aanwezig naast deze README file) uit en haal er enkel de reeds voltooide todo's uit.
 
 ### technische analyse
 
-Je maakt een functie `sum` die een array inneemt als parameter.
-
-Print in deze functie eerst de array af met `console.log`;
-
-Deze functie zal een `for` lus bevatten die de som berekent van de getallen in de array.
-
-Deze functie geeft de som van de getallen in de array terug.
+1. Maak een array van Todos door het bestand todos.json uit te lezen.
+2. Schrijf een functie _getCompleted()_ dat als parameter je array ontvangt. Zorg ervoor dat de functie een array teruggeeft met _enkel de voltooide_ todo's.
+3. Toon de voltooide todo's op de website in een lijst.
 
 ### voorbeeldinteractie
 
-![voorbeeldinteractie](./voorbeeldinteractie-array-sum-functie.png)
+![voorbeeldinteractie](./voorbeeldinteractie-todos.png)
+
+## oefening 4: dieren
+
+### leerdoelen
+
+* objecten aanmaken
+* dot-notatie gebruiken
+* gebruik/uitlezen van JSON
+* werken met gebruikersinteractie
+* werken met arrays van objecten
+
+### functionele analyse
+
+Toon de gebruiker een lijst van dieren. Nadat de gebruiker een dier kiest wordt wat info betreffende dat gekozen dier weergegeven.
+
+### technische analyse
+
+Maak een array van dieren `animalData` door het bestand dieren.json in te lezen d.m.v. `import`.
+
+Maak een functie _getAnimalsList() dat de animal\[] als parameter ontvangt en een string\[] van alle dierennamen teruggeeft._
+
+Nu kan je de gebruiker laten kiezen uit 1 van de dieren. Gebruik de arraypositie om de info op te vragen van het gekozen dier.
+
+### voorbeeldinteractie
+
+![voorbeeldinteractie(./voorbeeldinteractie-dieren.gif)
