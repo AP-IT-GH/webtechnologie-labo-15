@@ -28,126 +28,165 @@ webtechnologie/
 - Zet je Javascript file steeds in strict mode (`"use strict"`);
 - Volg de [Coding Guidelines](https://apwt.gitbook.io/webtechnologie/coding-guidelines)
 
-## oefening 1: recept
+## Oefeningen functies
 
-### leerdoelen
+### oefening 1: opwarmers
+Schrijf de volgende functies om aan te tonen dat je alle concepten onder de knie hebt:
 
-* objecten aanmaken
-* dot notatie gebruiken
+* Schrijf een functie zonder argumenten die een getal teruggeeft.
+* Schrijf een functie zonder argumenten die een string teruggeeft.
+* Schrijf een functie zonder argumenten die een boolean teruggeeft.
+* Schrijf een functie zonder argumenten die een string afprint in de console.
+* Schrijf een functie met twee argumenten (twee getallen) die een getal op het scherm afprint. Het getal dat wordt getoond moet iets doen met deze twee getallen.
+
+### oefening 2: text-box-functie
+
+#### leerdoelen
+
+* input lezen
+* schrijven van eigen functies
+
+#### functionele analyse
+
+Je programma toont een stuk tekst in je console in een tekstvak
+
+#### technische analyse
+
+Je kan de code om een box te tekenen hergebruiken uit een eerdere oefening. Je moet ze wel nog omzetten naar een functie.
+
+Je maakt een functie `printTextBox` met een string als parameter. De functie toont de tekst in het tekstvak.
+
+Je roept de functie een aantal keer aan met verschillende parameters.
+
+#### voorbeeldinteractie
+
+![voorbeeldinteractie](./voorbeeldinteractie-textbox-functie.png)
+
+### oefening 3: name-from-email-functie
+
+#### leerdoelen
+
+* input lezen
 * lussen
+* schrijven van eigen functies
 
-### functionele analyse
+#### functionele analyse
 
-Het programma berekent de totaalprijs van een gegeven recept.
+Het programma toont het gedeelte van de e-mailadres dat de naam voorstelt.
 
-### technische analyse
+#### technische analyse
 
+Je kan de code van hergebruiken uit een eerdere oefening. Je moet ze opnieuw nog omzetten naar een functie.
 
-Je maakt een object. Dit bevat een
+Je maakt een functie `nameFromEmail` met 1 parameter die een email adres bevat. Deze functie geeft de voor en de achternaam terug in hoofdletters.
 
-* naam
-* beschrijving
-* personen
-* ingredienten
+Je vraagt de gebruiker op een interactieve manier achter zijn email adres.
 
-de ingredienten bevatten een:
+Je blijft een email adres vragen totdat deze een lege string ingeeft.
 
-* naam
-* hoeveelheid (bv "1 stuk", "1 kg")
-* prijs
+#### voorbeeldinteractie
 
-Maak het object aan met zelfgekozen values en ken deze toe aan aan variabele `spaghetti`.
+![voorbeeldinteractie](./voorbeeldinteractie-name-from-email-functie.gif)
 
-Print de naam van dit gerecht af (via de dot-notatie) gevolgd door de totaalprijs van alle ingredienten.
+### oefening 4: maaltafel-functie
 
-### voorbeeldinteractie
+#### leerdoelen
 
-![voorbeeldinteractie](./voorbeeldinteractie-recept.png)
+* gebruiken van lussen
+* schrijven van eigen functies
 
-## oefening 2: persoon
+#### functionele analyse
 
-### leerdoelen
+Je programma print de maaltafels van 1 tot en met 10 af (met 10 iteraties)
 
-* objecten aanmaken
-* dot-notatie gebruiken
-* gebruik/uitlezen van JSON
-* schrijven van functies
+#### technische analyse
 
-### functionele analyse
+Je kan code van een eerdere oefening herbruiken.
 
-Lees een json-bestand in en print daar enkele waardes van op het scherm
+Je maakt een functie `printMaaltafel` met 2 parameters: getal en iteraties. Deze functie print de maaltafel af van het gegeven getal en iteraties. De functie geeft niets terug en print enkel deze maaltafel af.
 
-### technische analyse
+Zorg ervoor dat je voor de getallen 1 tot en met 10 de maaltafel afprint.
 
-Maak een **person.json** bestand aan met volgende data:
+Je kan de getallen mooi oplijnen aan de hand van het  karakter. Zorg voor een 3de optionele parameter `separator` waarmee je de separator mee kan geven. Zorg voor een default  waarde voor deze separator als deze niet opgegeven wordt
 
+#### voorbeeldinteractie
+
+![voorbeeldinteractie](./voorbeeldinteractie-maaltafel-functie.png)
+
+### oefening 5: schrikkeljaar-functie
+
+#### leerdoelen
+
+* gebruiken van lussen
+* schrijven van eigen functies
+
+#### functionele analyse
+
+Je programma toont een overzicht van alle schrikkeljaren tussen 1950 en het huidige jaartal.
+
+#### technische analyse
+
+Je kan code herbruiken uit een eerdere oefening.
+
+Je maakt een functie `isLeapYear` die 1 parameter aanvaardt met het jaartal en de functie geeft true terug als het een schrikkeljaar is en false als het geen schrikkeljaar is. Reminder: een schrikkeljaar is elk veelvoud van 400, alsook elk ander getal dat een veelvoud is van 4 maar niet van 100.
+
+Je gebruikt een lus om voor de jaartallen tussen 1950 en dit jaar te berekenen of het een schrikkeljaar is of niet. Je print het jaar af als het een schrikkeljaar is.
+
+Je kan het huidige jaar verkrijgen met de volgende code
+
+```js
+new Date().getFullYear();
 ```
-{
-  "firstname": "Jurgen",
-  "lastname": "Vervoort",
-  "age": 27,
-  "city": "Heist-op-den-Berg",
-  "street": "Bergstraat",
-  "number": "17c",
-  "postal": 2220,
-  "hobbies": ["voetbal", "tafeltennis", "vissen"]
-}
-```
 
-1. Lees het _person.json_ bestand in
-2. Maak een eerste functie _printFullName()_ dat het ingelezen object als parameter ontvangt en de volledige naam van de persoon uitprint.
-3. Maak een tweede functie _printHobbies()_ dat het ingelezen object als parameter ontvangt en de hobby's van de persoon oplijst.
+#### voorbeeldinteractie
 
-### voorbeeldinteractie
+![voorbeeldinteractie](./voorbeeldinteractie-schrikkeljaar-functie.png)
 
-![voorbeeldinteractie](./voorbeeldinteractie-person.png)
+### oefening 6: array-sum
 
-## oefening 3: todo's
+#### leerdoelen
 
-### leerdoelen
+* gebruiken van lussen
+* schrijven van eigen functies
+* arrays
 
-* objecten aanmaken
-* dot-notatie gebruiken
-* gebruik/uitlezen van JSON
-* schrijven van functies
-* werken met arrays van objecten
+#### functionele analyse
 
-### functionele analyse
+Je programma berekent de som van een array
 
-Lees todos.json (aanwezig naast deze README file) uit en haal er enkel de reeds voltooide todo's uit.
+#### technische analyse
 
-### technische analyse
+Je maakt een functie `sum` die een array inneemt als parameter.
 
-1. Maak een array van Todos door het bestand todos.json uit te lezen.
-2. Schrijf een functie _getCompleted()_ dat als parameter je array ontvangt. Zorg ervoor dat de functie een array teruggeeft met _enkel de voltooide_ todo's.
-3. Toon de voltooide todo's op de website in een lijst.
+Print in deze functie eerst de array af met `console.log`;
 
-### voorbeeldinteractie
+Deze functie zal een `for` lus bevatten die de som berekent van de getallen in de array.
 
-![voorbeeldinteractie](./voorbeeldinteractie-todos.png)
+Deze functie geeft de som van de getallen in de array terug.
 
-## oefening 4: dieren
+#### voorbeeldinteractie
 
-### leerdoelen
+![voorbeeldinteractie](./voorbeeldinteractie-array-sum-functie.png)
 
-* objecten aanmaken
-* dot-notatie gebruiken
-* gebruik/uitlezen van JSON
-* werken met gebruikersinteractie
-* werken met arrays van objecten
+## Spread operator
 
-### functionele analyse
+### oefening 7: gebruik van de spread operator
 
-Toon de gebruiker een lijst van dieren. Nadat de gebruiker een dier kiest wordt wat info betreffende dat gekozen dier weergegeven.
+#### leerdoelen
 
-### technische analyse
+* begrijpen hoe de spread-operator werkt.
+* kunnen toepassen van de spread-operator om arrays samen te voegen en te kopiëren.
 
-Maak een array van dieren `animalData` door het bestand dieren.json in te lezen d.m.v. `import`.
+#### functionele analyse
 
-Maak een functie _getAnimalsList() dat de animal\[] als parameter ontvangt en een string\[] van alle dierennamen teruggeeft._
+Schrijf een JavaScript-functie genaamd `mergeArrays` die twee arrays accepteert en een nieuwe array retourneert waarin de elementen van beide arrays zijn samengevoegd. Gebruik de spread-operator om de arrays samen te voegen.
 
-Nu kan je de gebruiker laten kiezen uit 1 van de dieren. Gebruik de arraypositie om de info op te vragen van het gekozen dier.
+#### technische analyse
 
-### voorbeeldinteractie
+1. Schrijf een functie genaamd `mergeArrays` die twee parameters (arrays) accepteert.
+2. Gebruik de spread-operator om beide arrays samen te voegen in een nieuwe array.
+3. Lees het resultaat uit in de console.
 
-![voorbeeldinteractie(./voorbeeldinteractie-dieren.gif)
+#### voorbeeldinteractie
+
+![voorbeeldinteractie](./voorbeeldinteractie-merge-arrays.avif)
