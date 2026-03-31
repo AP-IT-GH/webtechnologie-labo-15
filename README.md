@@ -168,9 +168,29 @@ Deze functie geeft de som van de getallen in de array terug.
 
 ![voorbeeldinteractie](./voorbeeldinteractie-array-sum-functie.png)
 
+### oefening 7: omrekenen van graden
+
+#### leerdoelen
+
+* schrijven van eigen functies
+* rekenkundige operaties
+
+#### functionele analyse
+
+Schrijf een programma dat temperaturen kan omrekenen tussen Celsius en Fahrenheit.
+
+#### technische analyse
+
+- Vraag de gebruiker om een temperatuur en een eenheid (C of F).
+- Gebruik een functie die:
+    - Celsius omzet naar Fahrenheit met de formule: (C × 9/5) + 32
+    - Fahrenheit omzet naar Celsius met de formule: (F - 32) × 5/9
+- Toon de omgezette waarde in de console.
+- Geef een foutmelding als de eenheid niet correct is ingevoerd.
+
 ## Spread operator
 
-### oefening 7: gebruik van de spread operator
+### oefening 8: gebruik van de spread operator
 
 #### leerdoelen
 
