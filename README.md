@@ -51,7 +51,7 @@ Je programma toont een stuk tekst in je console in een tekstvak
 
 #### technische analyse
 
-Je kan de code om een box te tekenen hergebruiken uit een eerdere oefening. Je moet ze wel nog omzetten naar een functie.
+Je kan de code om een box te tekenen hergebruiken uit labo-12, oefening 13. Je moet ze wel nog omzetten naar een functie.
 
 Je maakt een functie `printTextBox` met een string als parameter. De functie toont de tekst in het tekstvak.
 
@@ -75,7 +75,7 @@ Het programma toont het gedeelte van de e-mailadres dat de naam voorstelt.
 
 #### technische analyse
 
-Je kan de code van hergebruiken uit een eerdere oefening. Je moet ze opnieuw nog omzetten naar een functie.
+Je kan de code hergebruiken uit labo-12, oefening 11. Je moet ze opnieuw nog omzetten naar een functie.
 
 Je maakt een functie `nameFromEmail` met 1 parameter die een email adres bevat. Deze functie geeft de voor en de achternaam terug in hoofdletters.
 
@@ -85,34 +85,9 @@ Je blijft een email adres vragen totdat deze een lege string ingeeft.
 
 #### voorbeeldinteractie
 
-![voorbeeldinteractie](./voorbeeldinteractie-name-from-email-functie.gif)
+![voorbeeldinteractie](./voorbeeldinteractie-name-from-email-functie.png)
 
-### oefening 4: maaltafel-functie
-
-#### leerdoelen
-
-* gebruiken van lussen
-* schrijven van eigen functies
-
-#### functionele analyse
-
-Je programma print de maaltafels van 1 tot en met 10 af (met 10 iteraties)
-
-#### technische analyse
-
-Je kan code van een eerdere oefening herbruiken.
-
-Je maakt een functie `printMaaltafel` met 2 parameters: getal en iteraties. Deze functie print de maaltafel af van het gegeven getal en iteraties. De functie geeft niets terug en print enkel deze maaltafel af.
-
-Zorg ervoor dat je voor de getallen 1 tot en met 10 de maaltafel afprint.
-
-Je kan de getallen mooi oplijnen aan de hand van het  karakter. Zorg voor een 3de optionele parameter `separator` waarmee je de separator mee kan geven. Zorg voor een default  waarde voor deze separator als deze niet opgegeven wordt
-
-#### voorbeeldinteractie
-
-![voorbeeldinteractie](./voorbeeldinteractie-maaltafel-functie.png)
-
-### oefening 5: schrikkeljaar-functie
+### oefening 4: schrikkeljaar-functie
 
 #### leerdoelen
 
@@ -125,7 +100,7 @@ Je programma toont een overzicht van alle schrikkeljaren tussen 1950 en het huid
 
 #### technische analyse
 
-Je kan code herbruiken uit een eerdere oefening.
+Je kan code herbruiken uit labo-13, oefening 2.
 
 Je maakt een functie `isLeapYear` die 1 parameter aanvaardt met het jaartal en de functie geeft true terug als het een schrikkeljaar is en false als het geen schrikkeljaar is. Reminder: een schrikkeljaar is elk veelvoud van 400, alsook elk ander getal dat een veelvoud is van 4 maar niet van 100.
 
@@ -141,7 +116,7 @@ new Date().getFullYear();
 
 ![voorbeeldinteractie](./voorbeeldinteractie-schrikkeljaar-functie.png)
 
-### oefening 6: array-sum
+### oefening 5: array-sum
 
 #### leerdoelen
 
@@ -167,6 +142,41 @@ Deze functie geeft de som van de getallen in de array terug.
 
 ![voorbeeldinteractie](./voorbeeldinteractie-array-sum-functie.png)
 
+### oefening 6: studentenresultaten
+
+#### leerdoelen
+
+* functies schrijven met een array als parameter
+* werken met arrays van objecten
+* functies die gebruik maken van andere functies
+
+#### functionele analyse
+
+Het programma verwerkt een lijst van studenten met hun punten en berekent statistieken.
+
+#### technische analyse
+
+Gebruik de volgende array:
+
+```js
+const students = [
+    { name: "An",   grades: [14, 16, 12, 18] },
+    { name: "Ben",  grades: [9,   7, 11,  8] },
+    { name: "Cas",  grades: [15, 17, 14, 16] },
+    { name: "Dina", grades: [6,   8,  5,  9] },
+    { name: "Eli",  grades: [13, 11, 15, 12] },
+];
+```
+
+1. Schrijf een functie `calculateAverage(grades)` die het gemiddelde berekent van een array van punten (afgerond op 2 decimalen).
+2. Gebruik `calculateAverage` in een lus om de naam en het gemiddelde van elke student in de console te printen.
+3. Schrijf een functie `getPassingStudents(students)` die een nieuwe array teruggeeft van studenten met een gemiddelde van 10 of meer.
+4. Print de namen van de geslaagde studenten.
+
+#### voorbeeldinteractie
+
+![voorbeeldinteractie](./voorbeeldinteractie-studentenresultaten.png)
+
 ### oefening 7: omrekenen van graden
 
 #### leerdoelen
@@ -186,6 +196,10 @@ Schrijf een programma dat temperaturen kan omrekenen tussen Celsius en Fahrenhei
     - Fahrenheit omzet naar Celsius met de formule: (F - 32) × 5/9
 - Toon de omgezette waarde in de console.
 - Geef een foutmelding als de eenheid niet correct is ingevoerd.
+
+#### voorbeeldinteractie
+
+![voorbeeldinteractie](./voorbeeldinteractie-omrekenen-graden.png)
 
 ## Spread operator
 
@@ -208,4 +222,65 @@ Schrijf een JavaScript-functie genaamd `mergeArrays` die twee arrays accepteert 
 
 #### voorbeeldinteractie
 
-![voorbeeldinteractie](./voorbeeldinteractie-merge-arrays.avif)
+![voorbeeldinteractie](./voorbeeldinteractie-merge-arrays.png)
+
+### oefening 9: spread operator met objecten
+
+#### leerdoelen
+
+* spread-operator gebruiken om objecten te kopiëren
+* spread-operator gebruiken om objecten samen te voegen
+* begrijpen dat spread een kopie maakt (geen referentie)
+
+#### functionele analyse
+
+Het programma maakt kopieën en combineert objecten met de spread-operator.
+
+#### technische analyse
+
+Gebruik de volgende objecten:
+
+```js
+const address = { street: "Lange Nieuwstraat", number: 14, city: "Antwerpen" };
+const person  = { firstName: "Lena", lastName: "Peeters", age: 21 };
+```
+
+1. Maak een kopie van `address` met de spread-operator en verander het huisnummer naar 99.
+2. Voeg `address` en `person` samen tot één nieuw object `contact` met de spread-operator.
+3. Print de kopie, `contact` en het originele `address` af in de console.
+4. Toon dat het originele `address` object ongewijzigd is.
+
+#### voorbeeldinteractie
+
+![voorbeeldinteractie](./voorbeeldinteractie-object-spread.png)
+
+### oefening 10: memes combineren met rest-parameters
+
+#### leerdoelen
+
+* rest-parameters gebruiken in functies (`...args`)
+* spread-operator gebruiken in combinatie met functies
+* aantonen dat spread een kopie maakt (geen referentie)
+
+#### functionele analyse
+
+Het programma combineert lijsten van memes uit verschillende categorieën tot één grote memelijst.
+
+#### technische analyse
+
+Gebruik de volgende arrays:
+
+```js
+const classicMemes   = ["Distracted Boyfriend", "Drake Hotline Bling", "Two Buttons"];
+const deepFriedMemes = ["Big Chungus", "Ugandan Knuckles", "Stonks"];
+const currentMemes   = ["He's Right You Know", "This is Fine", "Woman Yelling at Cat"];
+```
+
+1. Schrijf een functie `combineMemes(...memeCategories)` die een variabel aantal arrays ontvangt en ze samenvoegt tot één array met de spread-operator.
+2. Roep de functie aan met de drie arrays, sla het resultaat op in `fullMemeList` en print de lijst af.
+3. Maak een kopie van `fullMemeList` met de spread-operator en voeg twee extra memes toe aan de kopie.
+4. Print beide lijsten af en toon dat `fullMemeList` ongewijzigd is.
+
+#### voorbeeldinteractie
+
+![voorbeeldinteractie](./voorbeeldinteractie-combinememes.png)
