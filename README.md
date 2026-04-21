@@ -51,7 +51,7 @@ Je programma toont een stuk tekst in je console in een tekstvak
 
 #### technische analyse
 
-Je kan de code om een box te tekenen hergebruiken uit labo-12, oefening 13. Je moet ze wel nog omzetten naar een functie.
+Je kan de code om een box te tekenen hergebruiken uit labo-12, oefening 14. Je moet ze wel nog omzetten naar een functie.
 
 Je maakt een functie `printTextBox` met een string als parameter. De functie toont de tekst in het tekstvak.
 
