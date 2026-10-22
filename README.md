@@ -25,7 +25,7 @@ webtechnologie/
 ```
 
 - Gebruik steeds JS modules om globale variabelen te vermijden (`<script type="module" src="./path/to/script.js"></script>`)
-- Volg de [Coding Guidelines](https://webtechnologie.apload.be/coding-guidelines)
+- Volg de [Coding Guidelines](https://ap-it-gh.github.io/webtechnologie-docusaurus/coding-guidelines)
 
 ## Oefeningen functies
 
