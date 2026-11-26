@@ -37,6 +37,9 @@ Schrijf de volgende functies om aan te tonen dat je alle concepten onder de knie
 * Schrijf een functie zonder argumenten die een boolean teruggeeft.
 * Schrijf een functie zonder argumenten die een string afprint in de console.
 * Schrijf een functie met twee argumenten (twee getallen) die een getal op het scherm afprint. Het getal dat wordt getoond moet iets doen met deze twee getallen.
+* Herschrijf die laatste functie in arrow notatie.
+* Schrijf een arrow functie met 1 parameter die een getal verdubbelt. Gebruik de verkorte notatie: zonder accolades en zonder `return`.
+* Schrijf een functie `multiply` met twee parameters, waarbij de tweede parameter een standaardwaarde 2 heeft. Roep ze een keer aan met 1 argument en een keer met 2 argumenten.
 
 ### oefening 2: text-box-functie
 
@@ -284,3 +287,34 @@ const currentMemes   = ["He's Right You Know", "This is Fine", "Woman Yelling at
 #### voorbeeldinteractie
 
 ![voorbeeldinteractie](./voorbeeldinteractie-combinememes.png)
+
+### oefening 11: shallow of deep copy?
+
+#### leerdoelen
+
+* begrijpen dat de spread-operator enkel het eerste niveau kopieert
+* een echte kopie maken van een genest object met `structuredClone()`
+
+#### functionele analyse
+
+Het programma past een bestelling aan in een kopie van een object, en toont wanneer het origineel toch mee verandert.
+
+#### technische analyse
+
+Gebruik het volgende object:
+
+```js
+const cart = {
+    customer: "Lena",
+    order: { product: "Koptelefoon", price: 100 }
+};
+```
+
+1. Maak met de spread-operator een kopie `shallowCopy` van `cart` en verander daarin de klant naar "Bram".
+2. Print `cart.customer` en `shallowCopy.customer` af en toon dat de klant in `cart` nog altijd "Lena" is.
+3. Verander nu in `shallowCopy` de prijs naar 80 (`shallowCopy.order.price`) en print de prijs van beide objecten af. De prijs in `cart` is nu ook 80, want het geneste `order`-object wordt gedeeld.
+4. Maak een `deepCopy` met `structuredClone(cart)`, verander daarin de prijs naar 50 en print de prijs van beide objecten af. Deze keer blijft de prijs in `cart` op 80 staan.
+
+#### voorbeeldinteractie
+
+![voorbeeldinteractie](./voorbeeldinteractie-shallow-deep-copy.png)
