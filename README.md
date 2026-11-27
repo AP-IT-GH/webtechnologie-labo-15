@@ -125,89 +125,42 @@ Je roept de functie een aantal keer aan met verschillende parameters.
 
 ![voorbeeldinteractie](./voorbeeldinteractie-textbox-functie.png)
 
-### oefening 5: array-sum
+### oefening 5: sorteren
 
 #### leerdoelen
 
-* gebruiken van lussen
-* schrijven van eigen functies
-* arrays
+* een array van objecten sorteren met `sort()`
+* een compare-functie schrijven die op een property van een object vergelijkt
+* begrijpen dat `sort()` de originele array aanpast
 
 #### functionele analyse
 
-Je programma berekent de som van een array
-
-#### technische analyse
-
-Je maakt een functie `sum` die een array inneemt als parameter.
-
-Print in deze functie eerst de array af met `console.log`;
-
-Deze functie zal een `for` lus bevatten die de som berekent van de getallen in de array.
-
-Deze functie geeft de som van de getallen in de array terug.
-
-#### voorbeeldinteractie
-
-![voorbeeldinteractie](./voorbeeldinteractie-array-sum-functie.png)
-
-### oefening 6: studentenresultaten
-
-#### leerdoelen
-
-* functies schrijven met een array als parameter
-* werken met arrays van objecten
-* functies die gebruik maken van andere functies
-
-#### functionele analyse
-
-Het programma verwerkt een lijst van studenten met hun punten en berekent statistieken.
+Het programma sorteert een lijst steden op temperatuur, en toont wat `sort()` met het origineel doet.
 
 #### technische analyse
 
 Gebruik de volgende array:
 
 ```js
-const students = [
-    { name: "An",   grades: [14, 16, 12, 18] },
-    { name: "Ben",  grades: [9,   7, 11,  8] },
-    { name: "Cas",  grades: [15, 17, 14, 16] },
-    { name: "Dina", grades: [6,   8,  5,  9] },
-    { name: "Eli",  grades: [13, 11, 15, 12] },
+const cities = [
+    { name: "Gent", temperature: 12 },
+    { name: "Antwerpen", temperature: 4 },
+    { name: "Hasselt", temperature: 25 },
+    { name: "Brugge", temperature: 9 },
+    { name: "Leuven", temperature: 7 },
 ];
 ```
 
-1. Schrijf een functie `calculateAverage(grades)` die het gemiddelde berekent van een array van punten (afgerond op 2 decimalen).
-2. Gebruik `calculateAverage` in een lus om de naam en het gemiddelde van elke student in de console te printen.
-3. Schrijf een functie `getPassingStudents(students)` die een nieuwe array teruggeeft van studenten met een gemiddelde van 10 of meer.
-4. Print de namen van de geslaagde studenten.
+1. Schrijf een functie `compareTemperature(a, b)` die `a.temperature - b.temperature` teruggeeft.
+2. Maak met de spread-operator een kopie van `cities` en sorteer die met `compareTemperature`, zodat de koudste stad eerst komt. Print de gesorteerde lijst en het originele `cities` af.
+3. Sorteer ook een kopie met de warmste stad eerst, met een arrow functie als compare-functie.
+4. Sorteer tot slot `cities` zelf (zonder kopie) en print de array af om aan te tonen dat `sort()` het origineel aanpast.
 
 #### voorbeeldinteractie
 
-![voorbeeldinteractie](./voorbeeldinteractie-studentenresultaten.png)
+![voorbeeldinteractie](./voorbeeldinteractie-sorteren.png)
 
-### oefening 7: gebruik van de spread operator
-
-#### leerdoelen
-
-* begrijpen hoe de spread-operator werkt.
-* kunnen toepassen van de spread-operator om arrays samen te voegen en te kopiëren.
-
-#### functionele analyse
-
-Schrijf een JavaScript-functie genaamd `mergeArrays` die twee arrays accepteert en een nieuwe array retourneert waarin de elementen van beide arrays zijn samengevoegd. Gebruik de spread-operator om de arrays samen te voegen.
-
-#### technische analyse
-
-1. Schrijf een functie genaamd `mergeArrays` die twee parameters (arrays) accepteert.
-2. Gebruik de spread-operator om beide arrays samen te voegen in een nieuwe array.
-3. Lees het resultaat uit in de console.
-
-#### voorbeeldinteractie
-
-![voorbeeldinteractie](./voorbeeldinteractie-merge-arrays.png)
-
-### oefening 8: memes combineren met rest-parameters
+### oefening 6: memes combineren met rest-parameters
 
 #### leerdoelen
 
@@ -237,3 +190,4 @@ const currentMemes   = ["He's Right You Know", "This is Fine", "Woman Yelling at
 #### voorbeeldinteractie
 
 ![voorbeeldinteractie](./voorbeeldinteractie-combinememes.png)
+
