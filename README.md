@@ -29,28 +29,7 @@ webtechnologie/
 
 ## Oefeningen
 
-### oefening 1: gebruik van de spread operator
-
-#### leerdoelen
-
-* begrijpen hoe de spread-operator werkt.
-* kunnen toepassen van de spread-operator om arrays samen te voegen en te kopiëren.
-
-#### functionele analyse
-
-Schrijf een JavaScript-functie genaamd `mergeArrays` die twee arrays accepteert en een nieuwe array retourneert waarin de elementen van beide arrays zijn samengevoegd. Gebruik de spread-operator om de arrays samen te voegen.
-
-#### technische analyse
-
-1. Schrijf een functie genaamd `mergeArrays` die twee parameters (arrays) accepteert.
-2. Gebruik de spread-operator om beide arrays samen te voegen in een nieuwe array.
-3. Lees het resultaat uit in de console.
-
-#### voorbeeldinteractie
-
-![voorbeeldinteractie](./voorbeeldinteractie-merge-arrays.png)
-
-### oefening 2: spread operator met objecten
+### oefening 1: spread operator met objecten
 
 #### leerdoelen
 
@@ -80,7 +59,7 @@ const person  = { firstName: "Lena", lastName: "Peeters", age: 21 };
 
 ![voorbeeldinteractie](./voorbeeldinteractie-object-spread.png)
 
-### oefening 3: shallow of deep copy?
+### oefening 2: shallow of deep copy?
 
 #### leerdoelen
 
@@ -111,7 +90,7 @@ const cart = {
 
 ![voorbeeldinteractie](./voorbeeldinteractie-shallow-deep-copy.png)
 
-### oefening 4: opwarmers
+### oefening 3: opwarmers
 Schrijf de volgende functies om aan te tonen dat je alle concepten onder de knie hebt:
 
 * Schrijf een functie zonder argumenten die een getal teruggeeft.
@@ -123,7 +102,7 @@ Schrijf de volgende functies om aan te tonen dat je alle concepten onder de knie
 * Schrijf een arrow functie met 1 parameter die een getal verdubbelt. Gebruik de verkorte notatie: zonder accolades en zonder `return`.
 * Schrijf een functie `multiply` met twee parameters, waarbij de tweede parameter een standaardwaarde 2 heeft. Roep ze een keer aan met 1 argument en een keer met 2 argumenten.
 
-### oefening 5: text-box-functie
+### oefening 4: text-box-functie
 
 #### leerdoelen
 
@@ -146,7 +125,7 @@ Je roept de functie een aantal keer aan met verschillende parameters.
 
 ![voorbeeldinteractie](./voorbeeldinteractie-textbox-functie.png)
 
-### oefening 6: array-sum
+### oefening 5: array-sum
 
 #### leerdoelen
 
@@ -172,7 +151,7 @@ Deze functie geeft de som van de getallen in de array terug.
 
 ![voorbeeldinteractie](./voorbeeldinteractie-array-sum-functie.png)
 
-### oefening 7: studentenresultaten
+### oefening 6: studentenresultaten
 
 #### leerdoelen
 
@@ -206,6 +185,27 @@ const students = [
 #### voorbeeldinteractie
 
 ![voorbeeldinteractie](./voorbeeldinteractie-studentenresultaten.png)
+
+### oefening 7: gebruik van de spread operator
+
+#### leerdoelen
+
+* begrijpen hoe de spread-operator werkt.
+* kunnen toepassen van de spread-operator om arrays samen te voegen en te kopiëren.
+
+#### functionele analyse
+
+Schrijf een JavaScript-functie genaamd `mergeArrays` die twee arrays accepteert en een nieuwe array retourneert waarin de elementen van beide arrays zijn samengevoegd. Gebruik de spread-operator om de arrays samen te voegen.
+
+#### technische analyse
+
+1. Schrijf een functie genaamd `mergeArrays` die twee parameters (arrays) accepteert.
+2. Gebruik de spread-operator om beide arrays samen te voegen in een nieuwe array.
+3. Lees het resultaat uit in de console.
+
+#### voorbeeldinteractie
+
+![voorbeeldinteractie](./voorbeeldinteractie-merge-arrays.png)
 
 ### oefening 8: memes combineren met rest-parameters
 
