@@ -27,9 +27,91 @@ webtechnologie/
 - Gebruik steeds JS modules om globale variabelen te vermijden (`<script type="module" src="./path/to/script.js"></script>`)
 - Volg de [Coding Guidelines](https://webtechnologie.programmeren-ap.be/coding-guidelines)
 
-## Oefeningen functies
+## Oefeningen
 
-### oefening 1: opwarmers
+### oefening 1: gebruik van de spread operator
+
+#### leerdoelen
+
+* begrijpen hoe de spread-operator werkt.
+* kunnen toepassen van de spread-operator om arrays samen te voegen en te kopiëren.
+
+#### functionele analyse
+
+Schrijf een JavaScript-functie genaamd `mergeArrays` die twee arrays accepteert en een nieuwe array retourneert waarin de elementen van beide arrays zijn samengevoegd. Gebruik de spread-operator om de arrays samen te voegen.
+
+#### technische analyse
+
+1. Schrijf een functie genaamd `mergeArrays` die twee parameters (arrays) accepteert.
+2. Gebruik de spread-operator om beide arrays samen te voegen in een nieuwe array.
+3. Lees het resultaat uit in de console.
+
+#### voorbeeldinteractie
+
+![voorbeeldinteractie](./voorbeeldinteractie-merge-arrays.png)
+
+### oefening 2: spread operator met objecten
+
+#### leerdoelen
+
+* spread-operator gebruiken om objecten te kopiëren
+* spread-operator gebruiken om objecten samen te voegen
+* begrijpen dat spread een kopie maakt (geen referentie)
+
+#### functionele analyse
+
+Het programma maakt kopieën en combineert objecten met de spread-operator.
+
+#### technische analyse
+
+Gebruik de volgende objecten:
+
+```js
+const address = { street: "Lange Nieuwstraat", number: 14, city: "Antwerpen" };
+const person  = { firstName: "Lena", lastName: "Peeters", age: 21 };
+```
+
+1. Maak een kopie van `address` met de spread-operator en verander het huisnummer naar 99.
+2. Voeg `address` en `person` samen tot één nieuw object `contact` met de spread-operator.
+3. Print de kopie, `contact` en het originele `address` af in de console.
+4. Toon dat het originele `address` object ongewijzigd is.
+
+#### voorbeeldinteractie
+
+![voorbeeldinteractie](./voorbeeldinteractie-object-spread.png)
+
+### oefening 3: shallow of deep copy?
+
+#### leerdoelen
+
+* begrijpen dat de spread-operator enkel het eerste niveau kopieert
+* een echte kopie maken van een genest object met `structuredClone()`
+
+#### functionele analyse
+
+Het programma past een bestelling aan in een kopie van een object, en toont wanneer het origineel toch mee verandert.
+
+#### technische analyse
+
+Gebruik het volgende object:
+
+```js
+const cart = {
+    customer: "Lena",
+    order: { product: "Koptelefoon", price: 100 }
+};
+```
+
+1. Maak met de spread-operator een kopie `shallowCopy` van `cart` en verander daarin de klant naar "Bram".
+2. Print `cart.customer` en `shallowCopy.customer` af en toon dat de klant in `cart` nog altijd "Lena" is.
+3. Verander nu in `shallowCopy` de prijs naar 80 (`shallowCopy.order.price`) en print de prijs van beide objecten af. De prijs in `cart` is nu ook 80, want het geneste `order`-object wordt gedeeld.
+4. Maak een `deepCopy` met `structuredClone(cart)`, verander daarin de prijs naar 50 en print de prijs van beide objecten af. Deze keer blijft de prijs in `cart` op 80 staan.
+
+#### voorbeeldinteractie
+
+![voorbeeldinteractie](./voorbeeldinteractie-shallow-deep-copy.png)
+
+### oefening 4: opwarmers
 Schrijf de volgende functies om aan te tonen dat je alle concepten onder de knie hebt:
 
 * Schrijf een functie zonder argumenten die een getal teruggeeft.
@@ -41,7 +123,7 @@ Schrijf de volgende functies om aan te tonen dat je alle concepten onder de knie
 * Schrijf een arrow functie met 1 parameter die een getal verdubbelt. Gebruik de verkorte notatie: zonder accolades en zonder `return`.
 * Schrijf een functie `multiply` met twee parameters, waarbij de tweede parameter een standaardwaarde 2 heeft. Roep ze een keer aan met 1 argument en een keer met 2 argumenten.
 
-### oefening 2: text-box-functie
+### oefening 5: text-box-functie
 
 #### leerdoelen
 
@@ -64,62 +146,7 @@ Je roept de functie een aantal keer aan met verschillende parameters.
 
 ![voorbeeldinteractie](./voorbeeldinteractie-textbox-functie.png)
 
-### oefening 3: name-from-email-functie
-
-#### leerdoelen
-
-* input lezen
-* lussen
-* schrijven van eigen functies
-
-#### functionele analyse
-
-Het programma toont het gedeelte van de e-mailadres dat de naam voorstelt.
-
-#### technische analyse
-
-Je kan de code hergebruiken uit labo-12, oefening 11. Je moet ze opnieuw nog omzetten naar een functie.
-
-Je maakt een functie `nameFromEmail` met 1 parameter die een email adres bevat. Deze functie geeft de voor en de achternaam terug in hoofdletters.
-
-Je vraagt de gebruiker op een interactieve manier achter zijn email adres.
-
-Je blijft een email adres vragen totdat deze een lege string ingeeft.
-
-#### voorbeeldinteractie
-
-![voorbeeldinteractie](./voorbeeldinteractie-name-from-email-functie.png)
-
-### oefening 4: schrikkeljaar-functie
-
-#### leerdoelen
-
-* gebruiken van lussen
-* schrijven van eigen functies
-
-#### functionele analyse
-
-Je programma toont een overzicht van alle schrikkeljaren tussen 1950 en het huidige jaartal.
-
-#### technische analyse
-
-Je kan code herbruiken uit labo-13, oefening 2.
-
-Je maakt een functie `isLeapYear` die 1 parameter aanvaardt met het jaartal en de functie geeft true terug als het een schrikkeljaar is en false als het geen schrikkeljaar is. Reminder: een schrikkeljaar is elk veelvoud van 400, alsook elk ander getal dat een veelvoud is van 4 maar niet van 100.
-
-Je gebruikt een lus om voor de jaartallen tussen 1950 en dit jaar te berekenen of het een schrikkeljaar is of niet. Je print het jaar af als het een schrikkeljaar is.
-
-Je kan het huidige jaar verkrijgen met de volgende code
-
-```js
-new Date().getFullYear();
-```
-
-#### voorbeeldinteractie
-
-![voorbeeldinteractie](./voorbeeldinteractie-schrikkeljaar-functie.png)
-
-### oefening 5: array-sum
+### oefening 6: array-sum
 
 #### leerdoelen
 
@@ -145,7 +172,7 @@ Deze functie geeft de som van de getallen in de array terug.
 
 ![voorbeeldinteractie](./voorbeeldinteractie-array-sum-functie.png)
 
-### oefening 6: studentenresultaten
+### oefening 7: studentenresultaten
 
 #### leerdoelen
 
@@ -180,84 +207,7 @@ const students = [
 
 ![voorbeeldinteractie](./voorbeeldinteractie-studentenresultaten.png)
 
-### oefening 7: omrekenen van graden
-
-#### leerdoelen
-
-* schrijven van eigen functies
-* rekenkundige operaties
-
-#### functionele analyse
-
-Schrijf een programma dat temperaturen kan omrekenen tussen Celsius en Fahrenheit.
-
-#### technische analyse
-
-- Vraag de gebruiker om een temperatuur en een eenheid (C of F).
-- Gebruik een functie die:
-    - Celsius omzet naar Fahrenheit met de formule: (C × 9/5) + 32
-    - Fahrenheit omzet naar Celsius met de formule: (F - 32) × 5/9
-- Toon de omgezette waarde in de console.
-- Geef een foutmelding als de eenheid niet correct is ingevoerd.
-
-#### voorbeeldinteractie
-
-![voorbeeldinteractie](./voorbeeldinteractie-omrekenen-graden.png)
-
-## Spread operator
-
-### oefening 8: gebruik van de spread operator
-
-#### leerdoelen
-
-* begrijpen hoe de spread-operator werkt.
-* kunnen toepassen van de spread-operator om arrays samen te voegen en te kopiëren.
-
-#### functionele analyse
-
-Schrijf een JavaScript-functie genaamd `mergeArrays` die twee arrays accepteert en een nieuwe array retourneert waarin de elementen van beide arrays zijn samengevoegd. Gebruik de spread-operator om de arrays samen te voegen.
-
-#### technische analyse
-
-1. Schrijf een functie genaamd `mergeArrays` die twee parameters (arrays) accepteert.
-2. Gebruik de spread-operator om beide arrays samen te voegen in een nieuwe array.
-3. Lees het resultaat uit in de console.
-
-#### voorbeeldinteractie
-
-![voorbeeldinteractie](./voorbeeldinteractie-merge-arrays.png)
-
-### oefening 9: spread operator met objecten
-
-#### leerdoelen
-
-* spread-operator gebruiken om objecten te kopiëren
-* spread-operator gebruiken om objecten samen te voegen
-* begrijpen dat spread een kopie maakt (geen referentie)
-
-#### functionele analyse
-
-Het programma maakt kopieën en combineert objecten met de spread-operator.
-
-#### technische analyse
-
-Gebruik de volgende objecten:
-
-```js
-const address = { street: "Lange Nieuwstraat", number: 14, city: "Antwerpen" };
-const person  = { firstName: "Lena", lastName: "Peeters", age: 21 };
-```
-
-1. Maak een kopie van `address` met de spread-operator en verander het huisnummer naar 99.
-2. Voeg `address` en `person` samen tot één nieuw object `contact` met de spread-operator.
-3. Print de kopie, `contact` en het originele `address` af in de console.
-4. Toon dat het originele `address` object ongewijzigd is.
-
-#### voorbeeldinteractie
-
-![voorbeeldinteractie](./voorbeeldinteractie-object-spread.png)
-
-### oefening 10: memes combineren met rest-parameters
+### oefening 8: memes combineren met rest-parameters
 
 #### leerdoelen
 
@@ -287,34 +237,3 @@ const currentMemes   = ["He's Right You Know", "This is Fine", "Woman Yelling at
 #### voorbeeldinteractie
 
 ![voorbeeldinteractie](./voorbeeldinteractie-combinememes.png)
-
-### oefening 11: shallow of deep copy?
-
-#### leerdoelen
-
-* begrijpen dat de spread-operator enkel het eerste niveau kopieert
-* een echte kopie maken van een genest object met `structuredClone()`
-
-#### functionele analyse
-
-Het programma past een bestelling aan in een kopie van een object, en toont wanneer het origineel toch mee verandert.
-
-#### technische analyse
-
-Gebruik het volgende object:
-
-```js
-const cart = {
-    customer: "Lena",
-    order: { product: "Koptelefoon", price: 100 }
-};
-```
-
-1. Maak met de spread-operator een kopie `shallowCopy` van `cart` en verander daarin de klant naar "Bram".
-2. Print `cart.customer` en `shallowCopy.customer` af en toon dat de klant in `cart` nog altijd "Lena" is.
-3. Verander nu in `shallowCopy` de prijs naar 80 (`shallowCopy.order.price`) en print de prijs van beide objecten af. De prijs in `cart` is nu ook 80, want het geneste `order`-object wordt gedeeld.
-4. Maak een `deepCopy` met `structuredClone(cart)`, verander daarin de prijs naar 50 en print de prijs van beide objecten af. Deze keer blijft de prijs in `cart` op 80 staan.
-
-#### voorbeeldinteractie
-
-![voorbeeldinteractie](./voorbeeldinteractie-shallow-deep-copy.png)
